@@ -1,0 +1,15 @@
+.profile-pic-details{
+    display:  flex ;
+    flex-direction: row;
+    justify-content:  space-between;
+}
+.img-fluid.rounded-circle.img-thumbnail{
+    height: 100px;
+    width: 100px;
+}
+.custom-mb-3.custom-row.custom-align-items-center{
+    border: 2px solid;
+    border-radius: 5px;
+    border-color :#dddddd;
+    padding: 5px;
+}

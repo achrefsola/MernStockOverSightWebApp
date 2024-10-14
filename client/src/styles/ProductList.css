@@ -1,0 +1,155 @@
+.deleteicon{
+    color: rgb(255, 5, 5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+  }  
+  .deleteicon:hover{
+    color: rgb(245, 14, 14);
+    transform: scale(1.2);
+    
+  }  
+  .add-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px; /* Add some margin to separate the button from the table */
+  }
+  
+  .addbutton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+
+  .addicon{
+    color: green;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+  }  
+  .addicon:hover{
+    color: rgb(6, 94, 53);
+    transform: scale(1.2);
+    
+  } 
+  .modicon{
+    color: blue;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+    
+  } 
+ 
+  .modicon:hover{
+    color: rgb(32, 0, 92);
+    transform: scale(1.2);
+    
+  }  
+  
+  .billicon{
+    color: #198754;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+  }
+  .billicon:hover{
+    color: #115837;
+    transform: scale(1.2);
+    
+  } 
+
+  .parent{
+    display:  flex ;
+    flex-direction: row;
+  }
+/* Ensure the container for the table has relative positioning */
+.table-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.small-image {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  cursor: pointer;
+}
+
+.image-preview {
+  position: fixed; /* Change to fixed to overlay all content */
+  top: 40%; /* Adjust vertical position */
+  left: 60%; /* Adjust horizontal position */
+  transform: translateX(-50%); /* Center horizontally */
+  width: auto; /* Adjust as needed */
+  height: auto;
+  display: none; /* Hide by default */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  background: white;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.image-preview img {
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.image-container:hover .image-preview {
+  display: block    ; /* Show preview on hover */
+}
+
+.image-product-name{
+  display: flex;
+}
+table thead th {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.product-name {
+  max-width: 100px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* Tooltip container */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip-container .tooltip-text {
+  visibility: hidden;
+  width: 200px; 
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; 
+  left: 50%;
+  margin-left: -100px; 
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: normal; 
+}
+
+/* Show the tooltip on hover */
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

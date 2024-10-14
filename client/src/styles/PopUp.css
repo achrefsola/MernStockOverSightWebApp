@@ -1,0 +1,69 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+ 
+}
+
+.popup-inner {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+  width: 35%; 
+  max-height: 80%;
+  overflow-y: auto; 
+  height: auto; 
+ 
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  padding: 3px;
+  padding-right: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: red;
+  
+}
+
+
+.supplier-add{
+  display:  flex;
+}
+.supplier-add p{
+  font-family: sans-serif;
+  color:  green;
+ font-weight: 100;
+}
+.product-status{
+  display: flex;
+  flex-direction: column;
+}
+.actif-inactif{
+  display: flex;
+  padding-top: 10px;
+ 
+  
+}
+.actif-inactif p{
+  margin-inline: 10px;
+}

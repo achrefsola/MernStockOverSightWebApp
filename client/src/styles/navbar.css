@@ -1,0 +1,68 @@
+.navbar {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 0 20px;
+}
+
+.navbar .navbar-brand {
+  margin-left: 20px;
+}
+
+.dropdown-item:hover{
+cursor: pointer;
+}
+.navbar .navbar-brand img {
+  width: 150px;
+  height: 40px;
+}
+
+.navbar .nav-items {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .nav-items .nav-item {
+  margin-right: 20px;
+  position: relative;
+}
+
+.navbar .nav-items .nav-item .toggle {
+  color: rgba(33, 37, 41, 0.75);
+  font-size: 16px; /* Adjust icon size as needed */
+  background-color: transparent;
+  border: none;
+}
+
+.navbar .nav-items .nav-item .toggle:hover,
+.navbar .nav-items .nav-item .toggle:focus {
+  text-decoration: none;
+}
+
+.navbar .profile-pic {
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden; 
+  margin-right: 20px; 
+  margin-bottom: 10px; 
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+
+.navbar .profile-username {
+  margin-left: 10px;
+  display: flex;
+ 
+  color: rgba(33, 37, 41, 0.75);
+  justify-content: flex-end;
+}
