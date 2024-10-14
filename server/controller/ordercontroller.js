@@ -4,6 +4,7 @@ const ordercollection = require('../models/order')
 exports.createOrder= async(req,res)=>{
 
 try{
+    
     console.log("Request Body: ", req.body);
     const order = await ordercollection.create(req.body)
     return res.status(201).send(order)

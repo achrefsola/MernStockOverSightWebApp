@@ -8,9 +8,11 @@ const productroute = require('./routes/productroutes')
 const supplierroute = require('./routes/supplierroutes')
 const categoryroute= require('./routes/categoryroutes')
 const companyroute= require('./routes/companyroutes')
+const paymentroute= require('./routes/paymentroutes')
 
 const path = require('path');
 require('dotenv').config()
+
 app.use(cors())
 app.use(express.json())
 
@@ -24,6 +26,7 @@ app.use('/api/product',productroute);
 app.use('/api/supplier',supplierroute);
 app.use('/api/category',categoryroute);
 app.use('/api/company',companyroute);
+app.use('/api/payment',paymentroute);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));/*This configuration tells Express to serve files from a specific directory when requested */
 
 const port = process.env.port || 5000;
@@ -39,3 +42,4 @@ mongoose.connect(url)
     console.error('MongoDB connection error:', err);
     process.exit(1); 
   });
+  
