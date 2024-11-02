@@ -32,14 +32,17 @@ The application is designed to help businesses efficiently monitor and update st
    ```bash
    git clone https://github.com/achrefsola/MernStockOverSightWebApp
    cd MernStockOverSightWebApp
+   ```
 2.**Install Server Dependencies**
 ```bash
 cd server
 npm install
+```
 3. **Install Client Dependencies**
 ```bash
 cd ../client
 npm install
+```
 4. **Environment Variables**
 Create a .env file in the server directory and add the following variables:
 
@@ -51,11 +54,12 @@ PORT=5000
 In the server directory, run:  
 ```bash
 npm start
+```
 5.2 **Start the Client**  
 In the client directory, run:
 ```bash
 npm start
-
+```
 6. **Access the App**  
 Client: http://localhost:3000  
 Server: http://localhost:5000  
