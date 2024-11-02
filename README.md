@@ -33,37 +33,40 @@ The application is designed to help businesses efficiently monitor and update st
    git clone https://github.com/achrefsola/MernStockOverSightWebApp
    cd MernStockOverSightWebApp
 2.**Install Server Dependencies**
+```bash
 cd server
 npm install
 3. **Install Client Dependencies**
+```bash
 cd ../client
 npm install
 4. **Environment Variables**
 Create a .env file in the server directory and add the following variables:
 
-MONGODB_URI=<your_mongodb_connection_string>
-JWT_SECRET=<your_jwt_secret>
-PORT=5000
-5. **Running the Application**
-5.1 **Start the Server**
-In the server directory, run:
-
+MONGODB_URI=<your_mongodb_connection_string>  
+JWT_SECRET=<your_jwt_secret>  
+PORT=5000  
+5. **Running the Application**  
+5.1 **Start the Server**  
+In the server directory, run:  
+```bash
 npm start
-5.2 **Start the Client**
+5.2 **Start the Client**  
 In the client directory, run:
+```bash
 npm start
 
-6. **Access the App**
-Client: http://localhost:3000
-Server: http://localhost:5000
-7. **Usage**
-Register or Log In to access the dashboard.
+6. **Access the App**  
+Client: http://localhost:3000  
+Server: http://localhost:5000  
+7. **Usage**  
+Register or Log In to access the dashboard.  
 
-Manage Inventory: Navigate to Products to add, update, or delete items.
-Order Management: Use the Orders section to create new orders and automatically update stock levels.
-Supplier Tracking: Manage vendor information through the Suppliers section.
-Bill Generation: View and print bills for completed orders.
-Generate Reports: Monitor sales and stock levels to make data-driven decisions.
+Manage Inventory: Navigate to Products to add, update, or delete items.  
+Order Management: Use the Orders section to create new orders and automatically update stock levels.  
+Supplier Tracking: Manage vendor information through the Suppliers section.  
+Bill Generation: View and print bills for completed orders.  
+Generate Reports: Monitor sales and stock levels to make data-driven decisions.  
 
-##Contact
-For any questions or feedback about this project, please contact me at achrafsoula9@gmail.com.
+##Contact  
+For any questions or feedback about this project, please contact me at achrafsoula9@gmail.com.  
