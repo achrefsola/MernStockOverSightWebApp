@@ -29,6 +29,7 @@ The application is designed to help businesses efficiently monitor and update st
 ## Installation
 
 1. **Clone the Repository**:
+   ```bash
    git clone https://github.com/achrefsola/MernStockOverSightWebApp
    cd MernStockOverSightWebApp
 2.**Install Server Dependencies**
