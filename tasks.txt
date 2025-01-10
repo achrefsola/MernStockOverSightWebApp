@@ -1,0 +1,22 @@
++Implement search bar in order section*********
++Implement total price auto calculation in order section *********
++Modify contact to phone number in supplier creation  *********
++Add email & fiscal number in supplier creation section *********
++implement unique fiscal number in supplier creation section *********
++Add image for each product in product list *********
++Implement change profile pic *********
++Add image upload & buy price  & ref  in product creation *********
++Add category collection & it's crud *********
++Add image for each product in order creation *********
++fix add supplier in add product section *********
++fix update product *********
++improve design *********
++move company to dashboard *********
++Implement bill design88 (if confirmred or paid=> facture  !pending) *********
+
+
++add user_id Attribute to products &suppliers & orders and fetch them based on user id 
++Implement admin panel & auth & user managment 
++Implement stock calculation mechanism (in stock ,out of stock ) *
+
+

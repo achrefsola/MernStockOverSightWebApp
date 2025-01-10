@@ -10,7 +10,7 @@ import Loader from '../components/Loader';
 export default function Dashboard() {
   const { CompanyData, setCompanyData, fetchCompanyData, ManagerData } = useManager();
   const [buttonPopup, setButtonPopup] = useState(false); 
-  const [popupMode, setPopupMode] = useState('');
+  const [popupMode, setPopupMode] = useState([]);
   console.log('companydata type ',typeof(CompanyData));
 
   useEffect(() => {

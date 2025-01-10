@@ -2,7 +2,7 @@ import axios from 'axios';
 import { FaTrashAlt,FaPencilAlt } from 'react-icons/fa';
 import '../styles/ProductList.css'
 import { useManager } from '../components/ManagerContext';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import AddCategory from './AddCategory';
 import Confirm from'./Confirm'
 import AddSupplier from './AddSupplier';
@@ -32,6 +32,8 @@ const CategoryTable = () => {
     setActionToConfirm(() => handleDelete);
     setShowConfirmation(true);
   };
+   
+  
   
   
   

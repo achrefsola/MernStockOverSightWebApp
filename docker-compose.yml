@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # Frontend React Service
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=http://localhost:3000
+    networks:
+      - app-network
+
+  # Backend Node.js Service
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - MONGODB_URI=mongodb://mongodb:27017/stockoversight
+      - Secret_Key=b0b8719952f914832360cdcb9eb4fbbe02a82d766597e922e607ae3ea2d075b6
+   
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # MongoDB Service
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+    restart: unless-stopped
+
+# Volumes
+volumes:
+  mongodb_data:
+    driver: local
+
+# Networks
+networks:
+  app-network:
+    driver: bridge
