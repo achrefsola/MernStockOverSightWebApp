@@ -2,7 +2,7 @@ const express = require('express');
 const managercollection = require('../models/manager');
 const mongoose  = require('mongoose')
 const jwt  =require ('jsonwebtoken')
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
  
 exports.createManager= async(req,res)=>{
 

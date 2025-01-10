@@ -12,7 +12,7 @@ exports.makePayment = async (req,res)=>{
                 price_data: {
                     currency: 'usd', // Currency for the payment
                     product_data: {
-                        name: 'VIP', // Product name
+                        name: 'StockOversight VIP Pack', // Product name
                     },
                     unit_amount: 2000,
                 },
