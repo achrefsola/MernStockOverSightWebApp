@@ -79,7 +79,7 @@ ArgoCD for continuous delivery and managing Kubernetes manifests :
 - Deploy the application using GitOps principles.
 - Automatically sync application state from the Git repository to the Kubernetes cluster.
 - Monitor and manage application updates.
-![Argocd](.img\argocd.jpg)
+![Argocd](img/argocd.jpg)
 
 ## Docker and Kubernetes
 The project supports containerization and orchestration using Docker and Kubernetes. While the Docker Compose file is not included in this README, it can be used to manage local development environments. For production, Kubernetes manifests and Helm charts are provided to deploy the frontend, backend, and MongoDB.
