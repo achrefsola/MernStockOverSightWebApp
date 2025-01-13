@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+    environment {
+        BACKEND_IMAGE = 'achrafsola/backend:latest'
+        FRONTEND_IMAGE = 'achrafsola/frontend:latest'
+
+        
+    }
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/achrefsola/MernStockOverSightWebApp.git'
+            }
+        }
+
+        
+
+        stage('Build Docker Images') {
+            steps {
+                echo 'Building Docker images for backend and frontend'
+                bat """
+                docker build -t %BACKEND_IMAGE% -f ./server/Dockerfile ./server
+                docker build -t %FRONTEND_IMAGE% -f ./client/Dockerfile ./client
+                """
+            }
+        }
+        
+
+
+
+        stage('Push Docker Images') {
+            steps {
+                echo 'Pushing Docker images to Docker Hub'
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                        bat """
+                        docker login -u %DOCKER_USER% -p %DOCKER_PASS%
+                        docker push %BACKEND_IMAGE%
+                        docker push %FRONTEND_IMAGE%
+                        """
+                    }
+                }
+            }
+        }
+
+    }
+}
