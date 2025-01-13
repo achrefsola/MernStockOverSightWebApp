@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+  labels:
+    app: stockoverflow
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: client-stockoverflow
+  template:
+    metadata:
+      labels:
+        app: client-stockoverflow
+      
+    spec:
+      containers:
+      - name: client-stockoverflow
+        image: achrafsola/frontend:latest
+        ports:
+        - containerPort: 5173

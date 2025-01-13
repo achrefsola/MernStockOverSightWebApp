@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-service
+  
+spec:
+  selector:
+    app: stockoverflow
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5173
+    nodePort: 30002
+  type: NodePort

@@ -1,0 +1,38 @@
+replicaCount: 3
+
+image:
+  repository: achrafsola/frontend
+
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5173
+
+env:
+  - name: REACT_APP_SERVER_URL
+    value: http://server-stockoverflow:4000
+
+ingress:
+  enabled: true
+  className: "nginx"  
+
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  hosts:
+    - host: mern-app.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+serviceAccount:
+  create: true 
+  name: ""  
+
+autoscaling:
+  enabled: false  
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80

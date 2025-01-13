@@ -1,0 +1,28 @@
+replicaCount: 3
+
+image:
+  repository: achrafsola/backend
+
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 4000
+
+env:
+  MONGO_URI: "mongodb://achref:achref@mongo:27017/crud?authSource=admin"
+  PORT: "4000"
+
+ingress:
+  enabled: false
+
+serviceAccount:
+  create: true
+  name: ""
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80

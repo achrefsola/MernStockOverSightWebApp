@@ -1,56 +1,41 @@
 version: '3.8'
 
 services:
-  # Frontend React Service
+  backend:
+    image: node:18
+    container_name: backend
+    command: npm start
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./server:/server"  # Mount the local 'server' directory to '/server' inside the container
+    working_dir: /server      # Set the working directory to '/server' inside the container
+    environment:
+      - MONGODB_URI=mongodb://achref:achref@mongo:27017
+    depends_on:
+      - mongo
+
   frontend:
     build:
       context: ./client
-      dockerfile: Dockerfile
+    container_name: frontend
     ports:
-      - "3000:80"
-    depends_on:
-      - backend
-    environment:
-      - REACT_APP_API_URL=http://localhost:3000
-    networks:
-      - app-network
+      - "3000:3000"
+    volumes:
+      - "./client:/client"
+      - /client/node_modules  # Ensure node_modules are not overwritten by the volume
 
-  # Backend Node.js Service
-  backend:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
-    ports:
-      - "5000:5000"
-    depends_on:
-      - mongodb
+  mongo:
+    image: mongo
+    restart: always
+    container_name: mongo-app
     environment:
-      - NODE_ENV=production
-      - PORT=5000
-      - MONGODB_URI=mongodb://mongodb:27017/stockoversight
-      - Secret_Key=b0b8719952f914832360cdcb9eb4fbbe02a82d766597e922e607ae3ea2d075b6
-   
-    networks:
-      - app-network
-    restart: unless-stopped
-
-  # MongoDB Service
-  mongodb:
-    image: mongo:latest
+      MONGO_INITDB_ROOT_USERNAME: achref
+      MONGO_INITDB_ROOT_PASSWORD: achref
     ports:
       - "27017:27017"
     volumes:
-      - mongodb_data:/data/db
-    networks:
-      - app-network
-    restart: unless-stopped
+      - db-data:/data/db
 
-# Volumes
 volumes:
-  mongodb_data:
-    driver: local
-
-# Networks
-networks:
-  app-network:
-    driver: bridge
+  db-data: {}  # Persistent volume for MongoDB data

@@ -1,0 +1,18 @@
+replicaCount: 1
+image:
+  repository: mongo
+  tag: latest
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 27017
+ingress:
+  enabled: false
+serviceAccount:
+  create: true
+  name: ""
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
