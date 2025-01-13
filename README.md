@@ -72,14 +72,14 @@ This project is a Stock Management System built with the MERN stack (MongoDB, Ex
    - Server: [http://localhost:5000](http://localhost:5000)
 
 ## CI/CD Pipeline
-This project supports a CI/CD pipeline for automated deployment and testing. Tools like Jenkins or GitHub Actions can be configured to build and deploy the application. The pipeline includes building Docker images for the frontend and backend, pushing them to a container registry, and deploying to a Kubernetes cluster.
+This project supports a CI/CD pipeline for automated deployment and testing.  Jenkins is configured to build and deploy the application. The pipeline includes building Docker images for the frontend and backend, pushing them to a container registry, and deploying to a Kubernetes cluster.
 
 ### ArgoCD
-ArgoCD is recommended for continuous delivery and managing Kubernetes manifests. With ArgoCD, you can:
+ArgoCD for continuous delivery and managing Kubernetes manifests :
 - Deploy the application using GitOps principles.
 - Automatically sync application state from the Git repository to the Kubernetes cluster.
 - Monitor and manage application updates.
-![Alt text](.img\argocd.jpg)
+![Argocd](.img\argocd.jpg)
 
 ## Docker and Kubernetes
 The project supports containerization and orchestration using Docker and Kubernetes. While the Docker Compose file is not included in this README, it can be used to manage local development environments. For production, Kubernetes manifests and Helm charts are provided to deploy the frontend, backend, and MongoDB.
